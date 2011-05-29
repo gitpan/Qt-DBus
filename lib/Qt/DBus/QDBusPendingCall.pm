@@ -1,4 +1,4 @@
-package Qt::DBus::PendingCall;
+package Qt::DBus::QDBusPendingCall;
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 # classname: QDBusPendingCall
 # file     : QtDBus/qdbuspendingcall.h
@@ -7,44 +7,50 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
 
 =head1 NAME
 
-Qt::DBus::PendingCall
+Qt::DBus::QDBusPendingCall
 
 =head1 PUBLIC METHODS
 
 =over
 
-=item    QDBusPendingCall(const QDBusPendingCall & other)
+=item   QDBusPendingCall(const QDBusPendingCall & other)
 
-=item    ~QDBusPendingCall()
+=item   ~QDBusPendingCall()
 
-=item   QDBusError error()
+=item  QDBusError error()
 
-=item   static QDBusPendingCall fromCompletedCall(const QDBusMessage & message)
+=item  static QDBusPendingCall fromCompletedCall(const QDBusMessage & message)
 
-=item   static QDBusPendingCall fromError(const QDBusError & error)
+=item  static QDBusPendingCall fromError(const QDBusError & error)
 
-=item   bool isError()
+=item  bool isError()
 
-=item   bool isFinished()
+=item  bool isFinished()
 
-=item   bool isValid()
+=item  bool isValid()
 
-=item   QDBusPendingCall & operator=(const QDBusPendingCall & other)
+=item  QDBusPendingCall & operator=(const QDBusPendingCall & other)
 
-=item   QDBusMessage reply()
+=item  QDBusMessage reply()
 
-=item   void waitForFinished()
+=item  void waitForFinished()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

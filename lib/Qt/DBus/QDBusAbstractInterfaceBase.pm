@@ -1,42 +1,37 @@
-package Qt::DBus::Signature;
+package Qt::DBus::QDBusAbstractInterfaceBase;
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
-# classname: QDBusSignature
-# file     : QtDBus/qdbusextratypes.h
+# classname: QDBusAbstractInterfaceBase
+# file     : QtDBus/qdbusabstractinterface.h
 
 use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Core::QObject/;
 
 
 # FIXME: operator overload
-
 
 
 1;
 
 =head1 NAME
 
-Qt::DBus::Signature
+Qt::DBus::QDBusAbstractInterfaceBase
 
 =head1 PUBLIC METHODS
 
 =over
 
-=item    QDBusSignature()
+=item  int qt_metacall(QMetaObject::Call arg0, int arg1, void ** arg2)
 
-=item    QDBusSignature(const char * signature)
 
-=item    QDBusSignature(const QLatin1String & signature)
+=back
 
-=item    QDBusSignature(const QString & signature)
+=head1 ENUM VALUES
 
-=item   QDBusSignature & operator=(const QDBusSignature & signature)
-
-=item   void setSignature(const QString & signature)
-
-=item   QString signature()
+=over
 
 
 =back

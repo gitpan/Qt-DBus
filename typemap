@@ -27,10 +27,10 @@ QDBusConnection *                       		T_PTROBJ_0022
 ################################################################
 INPUT
 T_PTROBJ_0000
-    if (sv_derived_from($arg, \"Qt::DBus::Error\"))
+    if (sv_derived_from($arg, \"Qt::DBus::QDBusError\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
-        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::Error\");
+        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::QDBusError\");
 
 T_PTROBJ_0001
     if (sv_derived_from($arg, \"Qt::Core::QVariantComparisonHelper\"))
@@ -39,70 +39,70 @@ T_PTROBJ_0001
         Perl_croak(aTHX_ \"$var is not of type Qt::Core::QVariantComparisonHelper\");
 
 T_PTROBJ_0002
-    if (sv_derived_from($arg, \"Qt::DBus::Interface\"))
+    if (sv_derived_from($arg, \"Qt::DBus::QDBusInterface\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
-        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::Interface\");
+        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::QDBusInterface\");
 
 T_PTROBJ_0003
-    if (sv_derived_from($arg, \"Qt::DBus::PendingReplyData\"))
+    if (sv_derived_from($arg, \"Qt::DBus::QDBusPendingReplyData\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
-        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::PendingReplyData\");
+        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::QDBusPendingReplyData\");
 
 T_PTROBJ_0004
-    if (sv_derived_from($arg, \"Qt::DBus::Argument\"))
+    if (sv_derived_from($arg, \"Qt::DBus::QDBusArgument\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
-        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::Argument\");
+        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::QDBusArgument\");
 
 T_PTROBJ_0005
-    if (sv_derived_from($arg, \"Qt::DBus::ObjectPath\"))
+    if (sv_derived_from($arg, \"Qt::DBus::QDBusObjectPath\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
-        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::ObjectPath\");
+        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::QDBusObjectPath\");
 
 T_PTROBJ_0006
-    if (sv_derived_from($arg, \"Qt::DBus::Context\"))
+    if (sv_derived_from($arg, \"Qt::DBus::QDBusContext\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
-        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::Context\");
+        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::QDBusContext\");
 
 T_PTROBJ_0007
-    if (sv_derived_from($arg, \"Qt::DBus::PendingCallWatcher\"))
+    if (sv_derived_from($arg, \"Qt::DBus::QDBusPendingCallWatcher\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
-        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::PendingCallWatcher\");
+        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::QDBusPendingCallWatcher\");
 
 T_PTROBJ_0008
-    if (sv_derived_from($arg, \"Qt::DBus::Variant\"))
+    if (sv_derived_from($arg, \"Qt::DBus::QDBusVariant\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
-        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::Variant\");
+        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::QDBusVariant\");
 
 T_PTROBJ_0009
-    if (sv_derived_from($arg, \"Qt::DBus::MetaType\"))
+    if (sv_derived_from($arg, \"Qt::DBus::QDBusMetaType\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
-        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::MetaType\");
+        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::QDBusMetaType\");
 
 T_PTROBJ_0010
-    if (sv_derived_from($arg, \"Qt::DBus::ConnectionInterface\"))
+    if (sv_derived_from($arg, \"Qt::DBus::QDBusConnectionInterface\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
-        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::ConnectionInterface\");
+        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::QDBusConnectionInterface\");
 
 T_PTROBJ_0011
-    if (sv_derived_from($arg, \"Qt::DBus::PendingCall\"))
+    if (sv_derived_from($arg, \"Qt::DBus::QDBusPendingCall\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
-        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::PendingCall\");
+        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::QDBusPendingCall\");
 
 T_PTROBJ_0012
-    if (sv_derived_from($arg, \"Qt::DBus::Server\"))
+    if (sv_derived_from($arg, \"Qt::DBus::QDBusServer\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
-        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::Server\");
+        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::QDBusServer\");
 
 T_PTROBJ_0013
     if (sv_derived_from($arg, \"Qt::Core::QVariant::PrivateShared\"))
@@ -117,34 +117,34 @@ T_PTROBJ_0014
         Perl_croak(aTHX_ \"$var is not of type Qt::Core::QVariant\");
 
 T_PTROBJ_0015
-    if (sv_derived_from($arg, \"Qt::DBus::AbstractInterfaceBase\"))
+    if (sv_derived_from($arg, \"Qt::DBus::QDBusAbstractInterfaceBase\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
-        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::AbstractInterfaceBase\");
+        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::QDBusAbstractInterfaceBase\");
 
 T_PTROBJ_0016
-    if (sv_derived_from($arg, \"Qt::DBus::Signature\"))
+    if (sv_derived_from($arg, \"Qt::DBus::QDBusSignature\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
-        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::Signature\");
+        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::QDBusSignature\");
 
 T_PTROBJ_0017
-    if (sv_derived_from($arg, \"Qt::DBus::AbstractAdaptor\"))
+    if (sv_derived_from($arg, \"Qt::DBus::QDBusAbstractAdaptor\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
-        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::AbstractAdaptor\");
+        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::QDBusAbstractAdaptor\");
 
 T_PTROBJ_0018
-    if (sv_derived_from($arg, \"Qt::DBus::Message\"))
+    if (sv_derived_from($arg, \"Qt::DBus::QDBusMessage\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
-        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::Message\");
+        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::QDBusMessage\");
 
 T_PTROBJ_0019
-    if (sv_derived_from($arg, \"Qt::DBus::AbstractInterface\"))
+    if (sv_derived_from($arg, \"Qt::DBus::QDBusAbstractInterface\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
-        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::AbstractInterface\");
+        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::QDBusAbstractInterface\");
 
 T_PTROBJ_0020
     if (sv_derived_from($arg, \"Qt::Core::QVariant::Private\"))
@@ -153,58 +153,58 @@ T_PTROBJ_0020
         Perl_croak(aTHX_ \"$var is not of type Qt::Core::QVariant::Private\");
 
 T_PTROBJ_0021
-    if (sv_derived_from($arg, \"Qt::DBus::ServiceWatcher\"))
+    if (sv_derived_from($arg, \"Qt::DBus::QDBusServiceWatcher\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
-        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::ServiceWatcher\");
+        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::QDBusServiceWatcher\");
 
 T_PTROBJ_0022
-    if (sv_derived_from($arg, \"Qt::DBus::Connection\"))
+    if (sv_derived_from($arg, \"Qt::DBus::QDBusConnection\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
-        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::Connection\");
+        Perl_croak(aTHX_ \"$var is not of type Qt::DBus::QDBusConnection\");
 
 
 ################################################################
 OUTPUT
 T_PTROBJ_0000
-    sv_setref_pv($arg, \"Qt::DBus::Error\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::DBus::QDBusError\", (void *)$var);
 
 T_PTROBJ_0001
     sv_setref_pv($arg, \"Qt::Core::QVariantComparisonHelper\", (void *)$var);
 
 T_PTROBJ_0002
-    sv_setref_pv($arg, \"Qt::DBus::Interface\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::DBus::QDBusInterface\", (void *)$var);
 
 T_PTROBJ_0003
-    sv_setref_pv($arg, \"Qt::DBus::PendingReplyData\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::DBus::QDBusPendingReplyData\", (void *)$var);
 
 T_PTROBJ_0004
-    sv_setref_pv($arg, \"Qt::DBus::Argument\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::DBus::QDBusArgument\", (void *)$var);
 
 T_PTROBJ_0005
-    sv_setref_pv($arg, \"Qt::DBus::ObjectPath\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::DBus::QDBusObjectPath\", (void *)$var);
 
 T_PTROBJ_0006
-    sv_setref_pv($arg, \"Qt::DBus::Context\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::DBus::QDBusContext\", (void *)$var);
 
 T_PTROBJ_0007
-    sv_setref_pv($arg, \"Qt::DBus::PendingCallWatcher\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::DBus::QDBusPendingCallWatcher\", (void *)$var);
 
 T_PTROBJ_0008
-    sv_setref_pv($arg, \"Qt::DBus::Variant\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::DBus::QDBusVariant\", (void *)$var);
 
 T_PTROBJ_0009
-    sv_setref_pv($arg, \"Qt::DBus::MetaType\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::DBus::QDBusMetaType\", (void *)$var);
 
 T_PTROBJ_0010
-    sv_setref_pv($arg, \"Qt::DBus::ConnectionInterface\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::DBus::QDBusConnectionInterface\", (void *)$var);
 
 T_PTROBJ_0011
-    sv_setref_pv($arg, \"Qt::DBus::PendingCall\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::DBus::QDBusPendingCall\", (void *)$var);
 
 T_PTROBJ_0012
-    sv_setref_pv($arg, \"Qt::DBus::Server\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::DBus::QDBusServer\", (void *)$var);
 
 T_PTROBJ_0013
     sv_setref_pv($arg, \"Qt::Core::QVariant::PrivateShared\", (void *)$var);
@@ -213,26 +213,26 @@ T_PTROBJ_0014
     sv_setref_pv($arg, \"Qt::Core::QVariant\", (void *)$var);
 
 T_PTROBJ_0015
-    sv_setref_pv($arg, \"Qt::DBus::AbstractInterfaceBase\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::DBus::QDBusAbstractInterfaceBase\", (void *)$var);
 
 T_PTROBJ_0016
-    sv_setref_pv($arg, \"Qt::DBus::Signature\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::DBus::QDBusSignature\", (void *)$var);
 
 T_PTROBJ_0017
-    sv_setref_pv($arg, \"Qt::DBus::AbstractAdaptor\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::DBus::QDBusAbstractAdaptor\", (void *)$var);
 
 T_PTROBJ_0018
-    sv_setref_pv($arg, \"Qt::DBus::Message\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::DBus::QDBusMessage\", (void *)$var);
 
 T_PTROBJ_0019
-    sv_setref_pv($arg, \"Qt::DBus::AbstractInterface\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::DBus::QDBusAbstractInterface\", (void *)$var);
 
 T_PTROBJ_0020
     sv_setref_pv($arg, \"Qt::Core::QVariant::Private\", (void *)$var);
 
 T_PTROBJ_0021
-    sv_setref_pv($arg, \"Qt::DBus::ServiceWatcher\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::DBus::QDBusServiceWatcher\", (void *)$var);
 
 T_PTROBJ_0022
-    sv_setref_pv($arg, \"Qt::DBus::Connection\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::DBus::QDBusConnection\", (void *)$var);
 

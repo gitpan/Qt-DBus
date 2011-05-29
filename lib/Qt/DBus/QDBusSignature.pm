@@ -1,42 +1,48 @@
-package Qt::DBus::ObjectPath;
+package Qt::DBus::QDBusSignature;
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
-# classname: QDBusObjectPath
+# classname: QDBusSignature
 # file     : QtDBus/qdbusextratypes.h
 
 use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
 
 =head1 NAME
 
-Qt::DBus::ObjectPath
+Qt::DBus::QDBusSignature
 
 =head1 PUBLIC METHODS
 
 =over
 
-=item    QDBusObjectPath()
+=item   QDBusSignature()
 
-=item    QDBusObjectPath(const char * path)
+=item   QDBusSignature(const char * signature)
 
-=item    QDBusObjectPath(const QLatin1String & path)
+=item   QDBusSignature(const QLatin1String & signature)
 
-=item    QDBusObjectPath(const QString & path)
+=item   QDBusSignature(const QString & signature)
 
-=item   QDBusObjectPath & operator=(const QDBusObjectPath & path)
+=item  QDBusSignature & operator=(const QDBusSignature & signature)
 
-=item   QString path()
+=item  void setSignature(const QString & signature)
 
-=item   void setPath(const QString & path)
+=item  QString signature()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

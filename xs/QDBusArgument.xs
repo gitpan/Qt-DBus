@@ -8,7 +8,7 @@
 # See http://dev.perl.org/licenses/artistic.html
 ################################################################
 
-MODULE = Qt::DBus			PACKAGE = Qt::DBus::Argument
+MODULE = Qt::DBus			PACKAGE = Qt::DBus::QDBusArgument
 PROTOTYPES: DISABLE
 
 # classname: QDBusArgument
@@ -27,32 +27,33 @@ QDBusArgument *ret;
 QDBusArgument * arg10;
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        ret = new QDBusArgument();
+        if (1) {
+      
+    ret = new QDBusArgument();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "Qt::DBus::Argument", (void *)ret);
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
     XSRETURN(1);
+    }
         break;
       }
-    case 2:
+      case 2:
       {
-        if (sv_isa(ST(1), "Qt::DBus::Argument")) {
-        arg10 = reinterpret_cast<QDBusArgument *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type Qt::DBus::Argument");
+        if (sv_isa(ST(1), "Qt::DBus::QDBusArgument")) {
+      arg10 = reinterpret_cast<QDBusArgument *>(SvIV((SV*)SvRV(ST(1))));
     ret = new QDBusArgument(*arg10);
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "Qt::DBus::Argument", (void *)ret);
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ##  ~QDBusArgument()
@@ -69,32 +70,36 @@ PREINIT:
 QVariant * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Core::QVariant")) {
-        arg00 = reinterpret_cast<QVariant *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Core::QVariant");
+      arg00 = reinterpret_cast<QVariant *>(SvIV((SV*)SvRV(ST(1))));
     (void)THIS->appendVariant(*arg00);
     XSRETURN(0);
+    }
 
 ## QVariant asVariant()
 void
 QDBusArgument::asVariant(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QVariant ret = THIS->asVariant();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Core::QVariant", (void *)new QVariant(ret));
     XSRETURN(1);
+    }
 
 ## bool atEnd()
 void
 QDBusArgument::atEnd(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->atEnd();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## void beginArray()
 ## void beginArray(int elementMetaTypeId)
@@ -104,24 +109,29 @@ PREINIT:
 int arg10;
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        (void)THIS->beginArray();
+        if (1) {
+      
+    (void)THIS->beginArray();
     XSRETURN(0);
+    }
         break;
       }
-    case 2:
+      case 2:
       {
-        arg10 = (int)SvIV(ST(1));
+        if (SvIOK(ST(1))) {
+      arg10 = (int)SvIV(ST(1));
     (void)THIS->beginArray(arg10);
     XSRETURN(0);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ## void beginMap()
@@ -133,25 +143,30 @@ int arg10;
 int arg11;
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        (void)THIS->beginMap();
+        if (1) {
+      
+    (void)THIS->beginMap();
     XSRETURN(0);
+    }
         break;
       }
-    case 3:
+      case 3:
       {
-        arg10 = (int)SvIV(ST(1));
-    arg11 = (int)SvIV(ST(2));
+        if (SvIOK(ST(1)) && SvIOK(ST(2))) {
+      arg10 = (int)SvIV(ST(1));
+      arg11 = (int)SvIV(ST(2));
     (void)THIS->beginMap(arg10, arg11);
     XSRETURN(0);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ## void beginMapEntry()
@@ -161,17 +176,23 @@ QDBusArgument::beginMapEntry(...)
 PREINIT:
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        (void)THIS->beginMapEntry();
+        if (1) {
+      
+    (void)THIS->beginMapEntry();
     XSRETURN(0);
+    }
+        else if (1) {
+      
+    (void)THIS->beginMapEntry();
+    XSRETURN(0);
+    }
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ## void beginStructure()
@@ -181,17 +202,23 @@ QDBusArgument::beginStructure(...)
 PREINIT:
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        (void)THIS->beginStructure();
+        if (1) {
+      
+    (void)THIS->beginStructure();
     XSRETURN(0);
+    }
+        else if (1) {
+      
+    (void)THIS->beginStructure();
+    XSRETURN(0);
+    }
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ## QString currentSignature()
@@ -199,20 +226,26 @@ void
 QDBusArgument::currentSignature(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QString ret = THIS->currentSignature();
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "", (void *)new QString(ret));
+    sv_setref_pv(ST(0), "Qt::Core::QString", (void *)new QString(ret));
     XSRETURN(1);
+    }
 
 ## QDBusArgument::ElementType currentType()
 void
 QDBusArgument::currentType(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QDBusArgument::ElementType ret = THIS->currentType();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## void endArray()
 ## void endArray()
@@ -221,17 +254,23 @@ QDBusArgument::endArray(...)
 PREINIT:
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        (void)THIS->endArray();
+        if (1) {
+      
+    (void)THIS->endArray();
     XSRETURN(0);
+    }
+        else if (1) {
+      
+    (void)THIS->endArray();
+    XSRETURN(0);
+    }
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ## void endMap()
@@ -241,17 +280,23 @@ QDBusArgument::endMap(...)
 PREINIT:
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        (void)THIS->endMap();
+        if (1) {
+      
+    (void)THIS->endMap();
     XSRETURN(0);
+    }
+        else if (1) {
+      
+    (void)THIS->endMap();
+    XSRETURN(0);
+    }
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ## void endMapEntry()
@@ -261,17 +306,23 @@ QDBusArgument::endMapEntry(...)
 PREINIT:
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        (void)THIS->endMapEntry();
+        if (1) {
+      
+    (void)THIS->endMapEntry();
     XSRETURN(0);
+    }
+        else if (1) {
+      
+    (void)THIS->endMapEntry();
+    XSRETURN(0);
+    }
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ## void endStructure()
@@ -281,17 +332,23 @@ QDBusArgument::endStructure(...)
 PREINIT:
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        (void)THIS->endStructure();
+        if (1) {
+      
+    (void)THIS->endStructure();
     XSRETURN(0);
+    }
+        else if (1) {
+      
+    (void)THIS->endStructure();
+    XSRETURN(0);
+    }
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ## QDBusArgument & operator<<(uchar arg)
@@ -329,20 +386,120 @@ QStringList * argd0;
 QByteArray * arge0;
 PPCODE:
     switch(items) {
-    case 2:
+      case 2:
       {
-        arg00 = (unsigned char)SvUV(ST(1));
+        if (SvUOK(ST(1))) {
+      arg00 = (unsigned char)SvUV(ST(1));
     QDBusArgument * ret = &THIS->operator<<(arg00);
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "Qt::DBus::Argument", (void *)ret);
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
     XSRETURN(1);
+    }
+        else if (1) {
+      arg10 = (bool)SvTRUE(ST(1));
+    QDBusArgument * ret = &THIS->operator<<(arg10);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
+    XSRETURN(1);
+    }
+        else if (SvIOK(ST(1))) {
+      arg20 = (short)SvIV(ST(1));
+    QDBusArgument * ret = &THIS->operator<<(arg20);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
+    XSRETURN(1);
+    }
+        else if (SvUOK(ST(1))) {
+      arg30 = (ushort)SvUV(ST(1));
+    QDBusArgument * ret = &THIS->operator<<(arg30);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
+    XSRETURN(1);
+    }
+        else if (SvIOK(ST(1))) {
+      arg40 = (int)SvIV(ST(1));
+    QDBusArgument * ret = &THIS->operator<<(arg40);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
+    XSRETURN(1);
+    }
+        else if (SvUOK(ST(1))) {
+      arg50 = (uint)SvUV(ST(1));
+    QDBusArgument * ret = &THIS->operator<<(arg50);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
+    XSRETURN(1);
+    }
+        else if (SvIOK(ST(1))) {
+      arg60 = (qlonglong)SvIV(ST(1));
+    QDBusArgument * ret = &THIS->operator<<(arg60);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
+    XSRETURN(1);
+    }
+        else if (SvUOK(ST(1))) {
+      arg70 = (qulonglong)SvUV(ST(1));
+    QDBusArgument * ret = &THIS->operator<<(arg70);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
+    XSRETURN(1);
+    }
+        else if (SvNOK(ST(1))) {
+      arg80 = (double)SvNV(ST(1));
+    QDBusArgument * ret = &THIS->operator<<(arg80);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
+    XSRETURN(1);
+    }
+        else if (sv_isa(ST(1), "Qt::Core::QString")) {
+      arg90 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+    QDBusArgument * ret = &THIS->operator<<(*arg90);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
+    XSRETURN(1);
+    }
+        else if (sv_isa(ST(1), "Qt::DBus::QDBusVariant")) {
+      arga0 = reinterpret_cast<QDBusVariant *>(SvIV((SV*)SvRV(ST(1))));
+    QDBusArgument * ret = &THIS->operator<<(*arga0);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
+    XSRETURN(1);
+    }
+        else if (sv_isa(ST(1), "Qt::DBus::QDBusObjectPath")) {
+      argb0 = reinterpret_cast<QDBusObjectPath *>(SvIV((SV*)SvRV(ST(1))));
+    QDBusArgument * ret = &THIS->operator<<(*argb0);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
+    XSRETURN(1);
+    }
+        else if (sv_isa(ST(1), "Qt::DBus::QDBusSignature")) {
+      argc0 = reinterpret_cast<QDBusSignature *>(SvIV((SV*)SvRV(ST(1))));
+    QDBusArgument * ret = &THIS->operator<<(*argc0);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
+    XSRETURN(1);
+    }
+        else if (sv_isa(ST(1), "Qt::Core::QStringList")) {
+      argd0 = reinterpret_cast<QStringList *>(SvIV((SV*)SvRV(ST(1))));
+    QDBusArgument * ret = &THIS->operator<<(*argd0);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
+    XSRETURN(1);
+    }
+        else if (sv_isa(ST(1), "Qt::Core::QByteArray")) {
+      arge0 = reinterpret_cast<QByteArray *>(SvIV((SV*)SvRV(ST(1))));
+    QDBusArgument * ret = &THIS->operator<<(*arge0);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ## QDBusArgument & operator=(const QDBusArgument & other)
@@ -351,15 +508,13 @@ QDBusArgument::operator_assign(...)
 PREINIT:
 QDBusArgument * arg00;
 PPCODE:
-    if (sv_isa(ST(1), "Qt::DBus::Argument")) {
-        arg00 = reinterpret_cast<QDBusArgument *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::DBus::Argument");
+    if (sv_isa(ST(1), "Qt::DBus::QDBusArgument")) {
+      arg00 = reinterpret_cast<QDBusArgument *>(SvIV((SV*)SvRV(ST(1))));
     QDBusArgument * ret = &THIS->operator=(*arg00);
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "Qt::DBus::Argument", (void *)ret);
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
     XSRETURN(1);
+    }
 
 ## const QDBusArgument & operator>>(uchar & arg)
 ## const QDBusArgument & operator>>(bool & arg)
@@ -396,18 +551,188 @@ QStringList * argd0;
 QByteArray * arge0;
 PPCODE:
     switch(items) {
-    case 2:
+      case 2:
       {
-        arg00 = (unsigned char)SvUV(ST(1));
+        if (SvUOK(ST(1))) {
+      arg00 = (unsigned char)SvUV(ST(1));
     const QDBusArgument * ret = &THIS->operator>>(arg00);
     ST(0) = sv_newmortal();
-    sv_setref_pv(ST(0), "Qt::DBus::Argument", (void *)ret);
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
     XSRETURN(1);
+    }
+        else if (1) {
+      arg10 = (bool)SvTRUE(ST(1));
+    const QDBusArgument * ret = &THIS->operator>>(arg10);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
+    XSRETURN(1);
+    }
+        else if (SvIOK(ST(1))) {
+      arg20 = (short)SvIV(ST(1));
+    const QDBusArgument * ret = &THIS->operator>>(arg20);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
+    XSRETURN(1);
+    }
+        else if (SvUOK(ST(1))) {
+      arg30 = (ushort)SvUV(ST(1));
+    const QDBusArgument * ret = &THIS->operator>>(arg30);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
+    XSRETURN(1);
+    }
+        else if (SvIOK(ST(1))) {
+      arg40 = (int)SvIV(ST(1));
+    const QDBusArgument * ret = &THIS->operator>>(arg40);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
+    XSRETURN(1);
+    }
+        else if (SvUOK(ST(1))) {
+      arg50 = (uint)SvUV(ST(1));
+    const QDBusArgument * ret = &THIS->operator>>(arg50);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
+    XSRETURN(1);
+    }
+        else if (SvIOK(ST(1))) {
+      arg60 = (qlonglong)SvIV(ST(1));
+    const QDBusArgument * ret = &THIS->operator>>(arg60);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
+    XSRETURN(1);
+    }
+        else if (SvUOK(ST(1))) {
+      arg70 = (qulonglong)SvUV(ST(1));
+    const QDBusArgument * ret = &THIS->operator>>(arg70);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
+    XSRETURN(1);
+    }
+        else if (SvNOK(ST(1))) {
+      arg80 = (double)SvNV(ST(1));
+    const QDBusArgument * ret = &THIS->operator>>(arg80);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
+    XSRETURN(1);
+    }
+        else if (sv_isa(ST(1), "Qt::Core::QString")) {
+      arg90 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+    const QDBusArgument * ret = &THIS->operator>>(*arg90);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
+    XSRETURN(1);
+    }
+        else if (sv_isa(ST(1), "Qt::DBus::QDBusVariant")) {
+      arga0 = reinterpret_cast<QDBusVariant *>(SvIV((SV*)SvRV(ST(1))));
+    const QDBusArgument * ret = &THIS->operator>>(*arga0);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
+    XSRETURN(1);
+    }
+        else if (sv_isa(ST(1), "Qt::DBus::QDBusObjectPath")) {
+      argb0 = reinterpret_cast<QDBusObjectPath *>(SvIV((SV*)SvRV(ST(1))));
+    const QDBusArgument * ret = &THIS->operator>>(*argb0);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
+    XSRETURN(1);
+    }
+        else if (sv_isa(ST(1), "Qt::DBus::QDBusSignature")) {
+      argc0 = reinterpret_cast<QDBusSignature *>(SvIV((SV*)SvRV(ST(1))));
+    const QDBusArgument * ret = &THIS->operator>>(*argc0);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
+    XSRETURN(1);
+    }
+        else if (sv_isa(ST(1), "Qt::Core::QStringList")) {
+      argd0 = reinterpret_cast<QStringList *>(SvIV((SV*)SvRV(ST(1))));
+    const QDBusArgument * ret = &THIS->operator>>(*argd0);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
+    XSRETURN(1);
+    }
+        else if (sv_isa(ST(1), "Qt::Core::QByteArray")) {
+      arge0 = reinterpret_cast<QByteArray *>(SvIV((SV*)SvRV(ST(1))));
+    const QDBusArgument * ret = &THIS->operator>>(*arge0);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
+
+
+
+
+################################################################
+#### 
+#### ENUMS
+#### 
+################################################################
+# ElementType::BasicType
+void
+BasicType()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDBusArgument::BasicType);
+    XSRETURN(1);
+
+
+# ElementType::VariantType
+void
+VariantType()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDBusArgument::VariantType);
+    XSRETURN(1);
+
+
+# ElementType::ArrayType
+void
+ArrayType()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDBusArgument::ArrayType);
+    XSRETURN(1);
+
+
+# ElementType::StructureType
+void
+StructureType()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDBusArgument::StructureType);
+    XSRETURN(1);
+
+
+# ElementType::MapType
+void
+MapType()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDBusArgument::MapType);
+    XSRETURN(1);
+
+
+# ElementType::MapEntryType
+void
+MapEntryType()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDBusArgument::MapEntryType);
+    XSRETURN(1);
+
+
+# ElementType::UnknownType
+void
+UnknownType()
+PPCODE:
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), (IV)QDBusArgument::UnknownType);
+    XSRETURN(1);
