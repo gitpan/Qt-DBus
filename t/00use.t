@@ -5,7 +5,7 @@
 
 # change 'tests => 1' to 'tests => last_test_to_print';
 
-use Test::More tests => 19;
+use Test::More tests => 20;
 BEGIN {
 use_ok('Qt::DBus');
 use_ok('Qt::DBus');
@@ -24,6 +24,7 @@ use_ok('Qt::DBus::QDBusServiceWatcher');
 use_ok('Qt::DBus::QDBusError');
 use_ok('Qt::DBus::QDBusAbstractInterfaceBase');
 use_ok('Qt::DBus::QDBusAbstractInterface');
+use_ok('Qt::DBus::QDBusPendingReplyData');
 use_ok('Qt::DBus::QDBusArgument');
 use_ok('Qt::DBus::QDBusContext');
 }

@@ -1,13 +1,15 @@
-package Qt::DBus::QDBusMetaType;
+package Qt::DBus::QDBusPendingReplyData;
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
-# classname: QDBusMetaType
-# file     : QtDBus/qdbusmetatype.h
+# classname: QDBusPendingReplyData
+# file     : QtDBus/qdbuspendingreply.h
 
 use strict;
 use warnings;
 #use Carp;
 
 our $VERSION = '0.01_03';
+use base qw/Qt::DBus::QDBusPendingCall/;
+#our @ISA = qw/Qt::DBus::QDBusPendingCall/;
 
 
 # FIXME: operator overload
@@ -17,21 +19,11 @@ our $VERSION = '0.01_03';
 
 =head1 NAME
 
-Qt::DBus::QDBusMetaType
+Qt::DBus::QDBusPendingReplyData
 
 =head1 PUBLIC METHODS
 
 =over
-
-=item  static bool demarshall(const QDBusArgument & arg0, int id, void * data)
-
-=item  static bool marshall(QDBusArgument & arg0, int id, const void * data)
-
-=item  static void registerMarshallOperators(int typeId, QDBusMetaType::MarshallFunction arg1, QDBusMetaType::DemarshallFunction arg2)
-
-=item  static int signatureToType(const char * signature)
-
-=item  static const char * typeToSignature(int type)
 
 
 =back

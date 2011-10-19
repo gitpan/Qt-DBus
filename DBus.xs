@@ -25,6 +25,7 @@
 #include "ppport.h"
 #undef do_open
 #undef do_close
+#undef RETURN
 
 typedef void (*T_FPOINTER_MARSHALLFUNCTION_QDBUSMETATYPE)(QDBusArgument &,const void *);
 typedef void (*T_FPOINTER_DEMARSHALLFUNCTION_QDBUSMETATYPE)(const QDBusArgument &,void *);
@@ -55,6 +56,7 @@ INCLUDE:		xs/QDBusMetaType.xs
 INCLUDE:		xs/QDBusObjectPath.xs
 INCLUDE:		xs/QDBusPendingCall.xs
 INCLUDE:		xs/QDBusPendingCallWatcher.xs
+INCLUDE:		xs/QDBusPendingReplyData.xs
 INCLUDE:		xs/QDBusServer.xs
 INCLUDE:		xs/QDBusServiceWatcher.xs
 INCLUDE:		xs/QDBusSignature.xs

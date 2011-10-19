@@ -409,7 +409,7 @@ PPCODE:
     sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
     XSRETURN(1);
     }
-        else if (SvUOK(ST(1))) {
+        else if ((SvIOK(ST(1)) || SvUOK(ST(1)))) {
       arg30 = (ushort)SvUV(ST(1));
     QDBusArgument * ret = &THIS->operator<<(arg30);
     ST(0) = sv_newmortal();
@@ -423,7 +423,7 @@ PPCODE:
     sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
     XSRETURN(1);
     }
-        else if (SvUOK(ST(1))) {
+        else if ((SvIOK(ST(1)) || SvUOK(ST(1)))) {
       arg50 = (uint)SvUV(ST(1));
     QDBusArgument * ret = &THIS->operator<<(arg50);
     ST(0) = sv_newmortal();
@@ -437,7 +437,7 @@ PPCODE:
     sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
     XSRETURN(1);
     }
-        else if (SvUOK(ST(1))) {
+        else if ((SvIOK(ST(1)) || SvUOK(ST(1)))) {
       arg70 = (qulonglong)SvUV(ST(1));
     QDBusArgument * ret = &THIS->operator<<(arg70);
     ST(0) = sv_newmortal();
@@ -574,7 +574,7 @@ PPCODE:
     sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
     XSRETURN(1);
     }
-        else if (SvUOK(ST(1))) {
+        else if ((SvIOK(ST(1)) || SvUOK(ST(1)))) {
       arg30 = (ushort)SvUV(ST(1));
     const QDBusArgument * ret = &THIS->operator>>(arg30);
     ST(0) = sv_newmortal();
@@ -588,7 +588,7 @@ PPCODE:
     sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
     XSRETURN(1);
     }
-        else if (SvUOK(ST(1))) {
+        else if ((SvIOK(ST(1)) || SvUOK(ST(1)))) {
       arg50 = (uint)SvUV(ST(1));
     const QDBusArgument * ret = &THIS->operator>>(arg50);
     ST(0) = sv_newmortal();
@@ -602,7 +602,7 @@ PPCODE:
     sv_setref_pv(ST(0), "Qt::DBus::QDBusArgument", (void *)ret);
     XSRETURN(1);
     }
-        else if (SvUOK(ST(1))) {
+        else if ((SvIOK(ST(1)) || SvUOK(ST(1)))) {
       arg70 = (qulonglong)SvUV(ST(1));
     const QDBusArgument * ret = &THIS->operator>>(arg70);
     ST(0) = sv_newmortal();
