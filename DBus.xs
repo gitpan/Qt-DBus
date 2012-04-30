@@ -38,6 +38,9 @@ typedef bool (*T_FPOINTER_F_COMPARE_QVARIANT)(const QVariant::Private *,const QV
 typedef void (*T_FPOINTER_F_CLEAR_QVARIANT)(QVariant::Private *);
 typedef bool (*T_FPOINTER_F_CANCONVERT_QVARIANT)(const QVariant::Private *d,QVariant::Type t);
 typedef void (*T_FPOINTER_F_DEBUGSTREAM_QVARIANT)(QDebug,const QVariant &);
+typedef QList<QVariant> T000;
+typedef QMap<QString,QVariant> T001;
+typedef QHash<QString,QVariant> T002;
 
 MODULE = Qt		PACKAGE = Qt
 PROTOTYPES: DISABLE
@@ -60,3 +63,6 @@ INCLUDE:		xs/QDBusPendingReplyData.xs
 INCLUDE:		xs/QDBusServer.xs
 INCLUDE:		xs/QDBusServiceWatcher.xs
 INCLUDE:		xs/QDBusSignature.xs
+INCLUDE:		xs/T000.xs
+INCLUDE:		xs/T001.xs
+INCLUDE:		xs/T002.xs

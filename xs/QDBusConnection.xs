@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -698,7 +698,7 @@ PPCODE:
     }
     else
         Perl_croak(aTHX_ "arg01 is not of type Qt::Core::QObject");
-      arg02 = QFlags<QDBusConnection::RegisterOption>((int)SvIV(ST(3)));
+      arg02 = QFlags<QDBusConnection::RegisterOption>((QDBusConnection::RegisterOption)SvIV(ST(3)));
     bool ret = THIS->registerObject(*arg00, arg01, arg02);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);

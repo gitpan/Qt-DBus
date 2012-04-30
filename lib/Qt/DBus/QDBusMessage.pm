@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_03';
+our $VERSION = '0.01_04';
 
 
 # FIXME: operator overload
@@ -29,6 +29,8 @@ Qt::DBus::QDBusMessage
 
 =item   ~QDBusMessage()
 
+=item  QList<QVariant> arguments()
+
 =item  bool autoStartService()
 
 =item  static QDBusMessage createError(const QDBusError & err)
@@ -44,6 +46,10 @@ Qt::DBus::QDBusMessage
 =item  QDBusMessage createErrorReply(QDBusError::ErrorType type, const QString & msg)
 
 =item  static QDBusMessage createMethodCall(const QString & destination, const QString & path, const QString & interface, const QString & method)
+
+=item  QDBusMessage createReply(const QList<QVariant> & arguments)
+
+=item  QDBusMessage createReply(const QList<QVariant> & arguments = QList<QVariant>())
 
 =item  QDBusMessage createReply(const QVariant & argument)
 
@@ -68,6 +74,8 @@ Qt::DBus::QDBusMessage
 =item  QString path()
 
 =item  QString service()
+
+=item  void setArguments(const QList<QVariant> & arguments)
 
 =item  void setAutoStartService(bool enable)
 
@@ -107,7 +115,7 @@ Dongxu Ma E<lt>dongxu@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2011 - 2011 by Dongxu Ma
+Copyright (C) 2011 - 2012 by Dongxu Ma
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.

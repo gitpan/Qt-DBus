@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -62,6 +62,19 @@ QDBusMessage::DESTROY()
 CODE:
     if(THIS != 0 && !SvREADONLY(SvRV(ST(0))))
         delete THIS;
+
+## QList<QVariant> arguments()
+void
+QDBusMessage::arguments(...)
+PREINIT:
+PPCODE:
+    if (1) {
+      
+    QList<QVariant> ret = THIS->arguments();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::DBus::Template::T000", (void *)new QList<QVariant>(ret));
+    XSRETURN(1);
+    }
 
 ## bool autoStartService()
 void
@@ -202,18 +215,52 @@ PPCODE:
     XSRETURN(1);
     }
 
+## QDBusMessage createReply(const QList<QVariant> & arguments)
+## QDBusMessage createReply(const QList<QVariant> & arguments = QList<QVariant>())
 ## QDBusMessage createReply(const QVariant & argument)
 void
 QDBusMessage::createReply(...)
 PREINIT:
-QVariant * arg00;
+QList<QVariant> * arg00;
+const QList<QVariant> & arg10_ = QList<QVariant>();
+QList<QVariant> * arg10 = const_cast<QList<QVariant> *>(&arg10_);
+QVariant * arg20;
 PPCODE:
-    if (sv_isa(ST(1), "Qt::Core::QVariant")) {
-      arg00 = reinterpret_cast<QVariant *>(SvIV((SV*)SvRV(ST(1))));
+    switch(items) {
+      case 1:
+      {
+        if (1) {
+      
+    QDBusMessage ret = THIS->createReply(*arg10);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusMessage", (void *)new QDBusMessage(ret));
+    XSRETURN(1);
+    }
+        break;
+      }
+      case 2:
+      {
+        if (sv_isa(ST(1), "Qt::DBus::Template::T000")) {
+      arg00 = reinterpret_cast<QList<QVariant> *>(SvIV((SV*)SvRV(ST(1))));
     QDBusMessage ret = THIS->createReply(*arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::DBus::QDBusMessage", (void *)new QDBusMessage(ret));
     XSRETURN(1);
+    }
+        else if (sv_isa(ST(1), "Qt::Core::QVariant")) {
+      arg20 = reinterpret_cast<QVariant *>(SvIV((SV*)SvRV(ST(1))));
+    QDBusMessage ret = THIS->createReply(*arg20);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusMessage", (void *)new QDBusMessage(ret));
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
+        Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
     }
 
 ## static QDBusMessage createSignal(const QString & path, const QString & interface, const QString & name)
@@ -364,6 +411,18 @@ PPCODE:
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Core::QString", (void *)new QString(ret));
     XSRETURN(1);
+    }
+
+## void setArguments(const QList<QVariant> & arguments)
+void
+QDBusMessage::setArguments(...)
+PREINIT:
+QList<QVariant> * arg00;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::DBus::Template::T000")) {
+      arg00 = reinterpret_cast<QList<QVariant> *>(SvIV((SV*)SvRV(ST(1))));
+    (void)THIS->setArguments(*arg00);
+    XSRETURN(0);
     }
 
 ## void setAutoStartService(bool enable)

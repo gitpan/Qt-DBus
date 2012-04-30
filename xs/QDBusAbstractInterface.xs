@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -314,6 +314,22 @@ PPCODE:
       default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
+    }
+
+## QDBusPendingCall asyncCallWithArgumentList(const QString & method, const QList<QVariant> & args)
+void
+QDBusAbstractInterface::asyncCallWithArgumentList(...)
+PREINIT:
+QString * arg00;
+QList<QVariant> * arg01;
+PPCODE:
+    if (sv_isa(ST(1), "Qt::Core::QString") && sv_isa(ST(2), "Qt::DBus::Template::T000")) {
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+      arg01 = reinterpret_cast<QList<QVariant> *>(SvIV((SV*)SvRV(ST(2))));
+    QDBusPendingCall ret = THIS->asyncCallWithArgumentList(*arg00, *arg01);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusPendingCall", (void *)new QDBusPendingCall(ret));
+    XSRETURN(1);
     }
 
 ## QDBusMessage call(const QString & method, const QVariant & arg1, const QVariant & arg2, const QVariant & arg3, const QVariant & arg4, const QVariant & arg5, const QVariant & arg6, const QVariant & arg7, const QVariant & arg8)
@@ -843,6 +859,92 @@ PPCODE:
     QDBusMessage ret = THIS->call(arga0, *arga1, *arga2, *arga3, *arga4, *arga5, *arga6, *arga7, *arga8, *arga9);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::DBus::QDBusMessage", (void *)new QDBusMessage(ret));
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
+        Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+    }
+
+## QDBusMessage callWithArgumentList(QDBus::CallMode mode, const QString & method, const QList<QVariant> & args)
+void
+QDBusAbstractInterface::callWithArgumentList(...)
+PREINIT:
+QDBus::CallMode arg00;
+QString * arg01;
+QList<QVariant> * arg02;
+PPCODE:
+    if (SvIOK(ST(1)) && sv_isa(ST(2), "Qt::Core::QString") && sv_isa(ST(3), "Qt::DBus::Template::T000")) {
+      arg00 = (QDBus::CallMode)SvIV(ST(1));
+      arg01 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
+      arg02 = reinterpret_cast<QList<QVariant> *>(SvIV((SV*)SvRV(ST(3))));
+    QDBusMessage ret = THIS->callWithArgumentList(arg00, *arg01, *arg02);
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::DBus::QDBusMessage", (void *)new QDBusMessage(ret));
+    XSRETURN(1);
+    }
+
+## bool callWithCallback(const QString & method, const QList<QVariant> & args, QObject * receiver, const char * member)
+## bool callWithCallback(const QString & method, const QList<QVariant> & args, QObject * receiver, const char * member, const char * errorSlot)
+void
+QDBusAbstractInterface::callWithCallback(...)
+PREINIT:
+QString * arg00;
+QList<QVariant> * arg01;
+QObject * arg02;
+const char * arg03;
+QString * arg10;
+QList<QVariant> * arg11;
+QObject * arg12;
+const char * arg13;
+const char * arg14;
+PPCODE:
+    switch(items) {
+      case 5:
+      {
+        if (sv_isa(ST(1), "Qt::Core::QString") && sv_isa(ST(2), "Qt::DBus::Template::T000") && (sv_derived_from(ST(3), "Qt::Core::QObject") || ST(3) == &PL_sv_undef) && SvPOK(ST(4))) {
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+      arg01 = reinterpret_cast<QList<QVariant> *>(SvIV((SV*)SvRV(ST(2))));
+      if (sv_derived_from(ST(3), "Qt::Core::QObject")) {
+        arg02 = reinterpret_cast<QObject *>(SvIV((SV*)SvRV(ST(3))));
+    }
+    else if (ST(3) == &PL_sv_undef) {
+        arg02 = 0;
+    }
+    else
+        Perl_croak(aTHX_ "arg02 is not of type Qt::Core::QObject");
+      arg03 = (const char *)SvPV_nolen(ST(4));
+    bool ret = THIS->callWithCallback(*arg00, *arg01, arg02, arg03);
+    ST(0) = sv_newmortal();
+    ST(0) = boolSV(ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      case 6:
+      {
+        if (sv_isa(ST(1), "Qt::Core::QString") && sv_isa(ST(2), "Qt::DBus::Template::T000") && (sv_derived_from(ST(3), "Qt::Core::QObject") || ST(3) == &PL_sv_undef) && SvPOK(ST(4)) && SvPOK(ST(5))) {
+      arg10 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+      arg11 = reinterpret_cast<QList<QVariant> *>(SvIV((SV*)SvRV(ST(2))));
+      if (sv_derived_from(ST(3), "Qt::Core::QObject")) {
+        arg12 = reinterpret_cast<QObject *>(SvIV((SV*)SvRV(ST(3))));
+    }
+    else if (ST(3) == &PL_sv_undef) {
+        arg12 = 0;
+    }
+    else
+        Perl_croak(aTHX_ "arg12 is not of type Qt::Core::QObject");
+      arg13 = (const char *)SvPV_nolen(ST(4));
+      arg14 = (const char *)SvPV_nolen(ST(5));
+    bool ret = THIS->callWithCallback(*arg10, *arg11, arg12, arg13, arg14);
+    ST(0) = sv_newmortal();
+    ST(0) = boolSV(ret);
     XSRETURN(1);
     }
 	else

@@ -1,7 +1,7 @@
 ################################################################
 # THE FOLLOWING CODE IS AUTOMATED, ANY MODIFICATION WILL BE LOST!
 #
-# Copyright (C) 2007 - 2011 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
+# Copyright (C) 2007 - 2012 by Dongxu Ma <dongxu _at_ cpan _dot_ org>
 #
 # This library is free software; you can redistribute it and/or 
 # modify it under the same terms as Perl itself.
@@ -93,7 +93,7 @@ PPCODE:
         if (sv_isa(ST(1), "Qt::Core::QString") && sv_isa(ST(2), "Qt::DBus::QDBusConnection") && SvIOK(ST(3))) {
       arg30 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
       arg31 = reinterpret_cast<QDBusConnection *>(SvIV((SV*)SvRV(ST(2))));
-      arg32 = QFlags<QDBusServiceWatcher::WatchModeFlag>((int)SvIV(ST(3)));
+      arg32 = QFlags<QDBusServiceWatcher::WatchModeFlag>((QDBusServiceWatcher::WatchModeFlag)SvIV(ST(3)));
     ret = new QDBusServiceWatcher(*arg30, *arg31, arg32, arg33);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::DBus::QDBusServiceWatcher", (void *)ret);
@@ -108,7 +108,7 @@ PPCODE:
         if (sv_isa(ST(1), "Qt::Core::QString") && sv_isa(ST(2), "Qt::DBus::QDBusConnection") && SvIOK(ST(3)) && (sv_derived_from(ST(4), "Qt::Core::QObject") || ST(4) == &PL_sv_undef)) {
       arg20 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
       arg21 = reinterpret_cast<QDBusConnection *>(SvIV((SV*)SvRV(ST(2))));
-      arg22 = QFlags<QDBusServiceWatcher::WatchModeFlag>((int)SvIV(ST(3)));
+      arg22 = QFlags<QDBusServiceWatcher::WatchModeFlag>((QDBusServiceWatcher::WatchModeFlag)SvIV(ST(3)));
       if (sv_derived_from(ST(4), "Qt::Core::QObject")) {
         arg23 = reinterpret_cast<QObject *>(SvIV((SV*)SvRV(ST(4))));
     }
@@ -241,7 +241,7 @@ PREINIT:
 QFlags<QDBusServiceWatcher::WatchModeFlag> arg00;
 PPCODE:
     if (SvIOK(ST(1))) {
-      arg00 = QFlags<QDBusServiceWatcher::WatchModeFlag>((int)SvIV(ST(1)));
+      arg00 = QFlags<QDBusServiceWatcher::WatchModeFlag>((QDBusServiceWatcher::WatchModeFlag)SvIV(ST(1)));
     (void)THIS->setWatchMode(arg00);
     XSRETURN(0);
     }
@@ -391,7 +391,7 @@ PPCODE:
       
     QFlags<QDBusServiceWatcher::WatchModeFlag> ret = THIS->watchMode();
     ST(0) = sv_newmortal();
-    sv_setiv(ST(0), (IV)ret);
+    sv_setiv(ST(0), (int)ret);
     XSRETURN(1);
     }
 

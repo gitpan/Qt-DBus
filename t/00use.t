@@ -5,11 +5,12 @@
 
 # change 'tests => 1' to 'tests => last_test_to_print';
 
-use Test::More tests => 20;
+use Test::More tests => 21;
 BEGIN {
 use_ok('Qt::DBus');
 use_ok('Qt::DBus');
 use_ok('Qt::DBus::QDBusSignature');
+use_ok('Qt::DBus::Template');
 use_ok('Qt::DBus::QDBusPendingCall');
 use_ok('Qt::DBus::QDBusServer');
 use_ok('Qt::DBus::QDBusInterface');
